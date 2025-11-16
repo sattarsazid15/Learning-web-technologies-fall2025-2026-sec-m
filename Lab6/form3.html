@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <title>FORM 3</title>
+</head>
+<body>
+
+<h2>Gender</h2>
+
+    <input type="radio" name="g" id="male"> Male
+    <input type="radio" name="g" id="female"> Female
+    <input type="radio" name="g" id="other"> Other
+    <br><br>
+
+    <input type="button" value="Submit" onclick="valGender()">
+    <p id="msg"></p>
+
+    <script>
+        function valGender(){
+        let msg = document.getElementById("msg");
+
+        if(!document.getElementById("male").checked &&
+            !document.getElementById("female").checked &&
+            !document.getElementById("other").checked){
+            msg.innerHTML = "Please select a gender";
+            msg.style.color = "red";
+            return;
+        }
+
+        msg.innerHTML = "Gender selected";
+        msg.style.color = "green";
+    }
+    </script>
+
+</body>
+</html>

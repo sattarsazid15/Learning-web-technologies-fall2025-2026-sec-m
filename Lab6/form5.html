@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <title>FORM 5</title>
+</head>
+<body>
+
+    <h2>Degree</h2>
+
+    <input type="checkbox" id="d1"> SSC
+    <input type="checkbox" id="d2"> HSC
+    <input type="checkbox" id="d3"> BSc
+    <br><br>
+
+    <input type="button" value="Submit" onclick="valDegree()">
+    <p id="msg"></p>
+
+    <script>
+    function valDegree(){
+        let msg = document.getElementById("msg");
+
+        if(!document.getElementById("d1").checked &&
+            !document.getElementById("d2").checked &&
+            !document.getElementById("d3").checked){
+            msg.innerHTML = "Select at least one degree";
+            msg.style.color = "red";
+            return;
+    }
+
+        msg.innerHTML = "Degree selected";
+        msg.style.color = "green";
+    }
+    </script>
+
+</body>
+</html>

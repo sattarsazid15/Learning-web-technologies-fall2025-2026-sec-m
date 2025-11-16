@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <title>FORM 1</title>
+</head>
+<body>
+    <h2>Name</h2>
+
+    <input type="text" id="name">
+    <input type="button" value="Submit" onclick="valName()">
+    <p id="msg"></p>
+
+    <script>
+        function valName(){
+        let name = document.getElementById("name").value.trim();
+        let msg = document.getElementById("msg");
+
+        if(name.length == 0){
+            msg.innerHTML = "Name Empty";
+            msg.style.color = "red";
+            return;
+        }   
+
+        let parts = name.split(" ");
+        if(parts.length < 2){
+            msg.innerHTML = "At least two words";
+            msg.style.color = "red";
+            return;
+        }
+
+        let first = name.charAt(0);
+        if(first.toLowerCase() < 'a' || first.toLowerCase() > 'z'){
+            msg.innerHTML = "Have to Start with a letter";
+            msg.style.color = "red";
+            return;
+        }
+
+        for(let i = 0; i < name.length; i++){
+            let ch = name.charAt(i);
+            if(ch != " " && ch != "." && ch != "-" &&
+                !( (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') )){
+                msg.innerHTML = "Only letters, dot, dash allowed";
+                msg.style.color = "red";
+                return;
+        }
+    }
+
+    msg.innerHTML = "Valid Name";
+    msg.style.color = "green";
+    }
+    </script>
+
+</body>
+</html>

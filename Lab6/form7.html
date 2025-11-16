@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <title>FORM 7</title>
+</head>
+<body>
+
+<h2>Profile Picture</h2>
+
+    User ID <input type="text" id="uid"><br><br>
+    Picture <input type="file" id="image"><br><br>
+
+    <input type="button" value="Submit" onclick="valProfilePicture()">
+    <p id="msg"></p>
+
+    <script>
+        function valProfilePicture(){
+        let uid = Number(document.getElementById("uid").value);
+        let image = document.getElementById("image").value;
+
+        let msg = document.getElementById("msg");
+
+        if(Number.isNaN(uid) || uid <= 0){
+        msg.innerHTML = "Invalid User ID ";
+        msg.style.color = "red";
+        return;
+        }
+
+        if(image == ""){
+        msg.innerHTML = "Please upload a image";
+        msg.style.color = "red";
+        return;
+        }
+
+        msg.innerHTML = "Valid";
+        msg.style.color = "green";
+    }
+    </script>
+
+</body>
+</html>

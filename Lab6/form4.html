@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>FORM 4</title>
+</head>
+<body>
+
+<h2>Date of Birth</h2>
+
+    DD<input type="text" id="dd" size="2"> / 
+    MM<input type="text" id="mm" size="2"> / 
+    YYYY<input type="text" id="yy" size="4">
+    <br><br>
+
+    <input type="button" value="Submit" onclick="valDOB()">
+    <p id="msg"></p>
+
+    <script>
+        function valDOB(){
+        let dd = Number(document.getElementById("dd").value);
+        let mm = Number(document.getElementById("mm").value);
+        let yy = Number(document.getElementById("yy").value);
+
+        let msg = document.getElementById("msg");
+
+        if(Number.isNaN(dd) || Number.isNaN(mm) || Number.isNaN(yy)){
+        msg.innerHTML = "All values must be numbers";
+        msg.style.color = "red";
+        return;
+        }
+
+        if(dd < 0 || dd > 31){
+        msg.innerHTML = "Invalid day";
+        msg.style.color = "red";
+        return;
+        }
+
+        if(mm < 1 || mm > 12){
+        msg.innerHTML = "Invalid month";
+        msg.style.color = "red";
+        return;
+        }
+
+        if(yy < 1900 || yy > 2016){
+        msg.innerHTML = "Invalid year";
+        msg.style.color = "red";
+        return;
+        }
+
+        msg.innerHTML = "Valid DOB";
+        msg.style.color = "green";
+    }
+    </script>
+
+</body>
+</html>
