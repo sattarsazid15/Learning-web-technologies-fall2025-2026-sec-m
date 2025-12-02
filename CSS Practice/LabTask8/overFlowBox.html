@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overflow Handling Box</title>
+
+    <style>
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #222;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+        }
+
+        #box-visible {
+            overflow: visible;
+        }
+
+        #box-hidden {
+            overflow: hidden;
+        }
+
+        #box-scroll {
+            overflow: scroll;
+        }
+
+        #box-auto {
+            overflow: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h2>Overflow Demonstration</h2>
+
+    <div id="box-visible" class="box">
+        <h3>Overflow: Visible</h3>
+        <p>
+            This is a very long text inside the box to test overflow behavior. 
+            When overflow is set to visible, extra content simply spills out of the box without being cut or hidden.
+            It keeps flowing downward and outward beyond the fixed height.
+            More text to extend the overflow beyond visible box boundary...
+        </p>
+    </div>
+
+    <div id="box-hidden" class="box">
+        <h3>Overflow: Hidden</h3>
+        <p>
+            This text is longer than the box height. Anything that doesn't fit is hidden.
+            You cannot scroll to read more because overflow is hidden.
+            More more more more more text that will be cut off...
+        </p>
+    </div>
+
+    <div id="box-scroll" class="box">
+        <h3>Overflow: Scroll</h3>
+        <p>
+            This box will always show scrollbars, even if the text fits or doesn't fit.
+            This allows the user to scroll to see the hidden portion.
+            Keep adding more and more text to force scrolling inside the box.
+        </p>
+    </div>
+
+    <div id="box-auto" class="box">
+        <h3>Overflow: Auto</h3>
+        <p>
+            Scrollbars appear only when necessary. If the text is larger than the box height,
+            scrollbars will show automatically; otherwise, the box remains clean.
+            Adding extra text to trigger auto scrolling inside the box...
+        </p>
+    </div>
+
+</body>
+</html>

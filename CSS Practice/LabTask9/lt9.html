@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Portal Layout</title>
+    <meta charset="utf-8">
+
+    <style>
+        #container {
+            width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+            font-size: 0;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        .box {
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 16px;
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+
+        #sidebar {
+            width: 20%;
+            background-color: #fff7e6;
+        }
+
+        #main {
+            width: 60%;
+            background-color: #e8f7ff;
+        }
+
+        #ad {
+            width: 20%;
+            background-color: #f0ffe8;
+            margin-right: 0;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 700px) {
+            #container { white-space: normal; font-size: 16px; }
+            .box { display: block; width: auto; margin-right: 0; margin-bottom: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="sidebar" class="box">
+            <h2>Categories</h2>
+            <p>- Technology</p>
+            <p>- Science</p>
+            <p>- Business</p>
+            <p>- Health</p>
+        </div>
+
+        <div id="main" class="box">
+            <h2>Top Story</h2>
+            <p>
+                Hello this is my page welcome here i will do practice etc etc.
+                This is the main article area — put your headline, paragraphs and images here.
+            </p>
+            <p>
+                More article text to show layout behavior. Use paragraphs, images, and headings
+                inside this main column.
+            </p>
+        </div>
+
+        <div id="ad" class="box">
+            <h2>Advertisement</h2>
+            <p>Ad 1 — 300×250</p>
+            <p>Ad 2 — Sponsor</p>
+        </div>
+    </div>
+
+</body>
+</html>
